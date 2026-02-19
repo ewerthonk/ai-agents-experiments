@@ -1,0 +1,287 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem{araujo2012}
+\abntrefinfo{Araujo}{ARAUJO}{2012}
+{ARAUJO, L.~C.
+\emph{Configura{\c c}{\~a}o}: uma perspectiva de arquitetura da informa{\c c}{\~a}o da escola de bras{\'\i}lia.
+Disserta\c{c}\~{a}o (Mestrado) --- Universidade de Bras{\'\i}lia, Bras{\'\i}lia, Mar{\c c}o 2012.}
+
+\bibitem{raff2025}
+\abntrefinfo{Farris, Raff e Biderman}{FARRIS; RAFF; BIDERMAN}{2025}
+{FARRIS, D.; RAFF, E.; BIDERMAN, S. \emph{How Large Language Models Work}. [S.l.]: Manning, 2025.}
+
+\bibitem{vaswani2017}
+\abntrefinfo{Vaswani et al.}{VASWANI et al.}{2017}
+{VASWANI, A. et al. Attention is all you need. In:  GUYON, I. et al. (Ed.). \emph{Advances in Neural Information Processing Systems}. Curran Associates, Inc., 2017. v.~30. Dispon{\'\i}vel em: \url{https://proceedings.neurips.cc/paper\_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}.}
+
+\bibitem{caseli2024}
+\abntrefinfo{Caseli e Nunes}{CASELI; NUNES}{2024}
+{CASELI, H.~M.; NUNES, M. G.~V. (Ed.). \emph{Processamento de Linguagem Natural: Conceitos, Técnicas e Aplicações em Português}. 2. ed. BPLN, 2024.
+ISBN 978-65-00-95750-1. Dispon{\'\i}vel em: \url{https://brasileiraspln.com/livro-pln/2a-edicao/}.}
+
+\bibitem{ouyang2022}
+\abntrefinfo{Ouyang et al.}{OUYANG et al.}{2022}
+{OUYANG, L. et al. Training language models to follow instructions with human feedback. In:  \emph{Proceedings of the 36th International Conference on Neural Information Processing Systems}. Red Hook, NY, USA: Curran Associates Inc., 2022.  (NIPS '22).
+ISBN 9781713871088.}
+
+\bibitem{hu2022}
+\abntrefinfo{Hu et al.}{HU et al.}{2022}
+{HU, E.~J. et al. Lora: Low-rank adaptation of large language models. In:  \emph{ICLR}. OpenReview.net, 2022. Dispon{\'\i}vel em: \url{http://dblp.uni-trier.de/db/conf/iclr/iclr2022.html\#HuSWALWWC22}.}
+
+\bibitem{dettmers2023}
+\abntrefinfo{Dettmers et al.}{DETTMERS et al.}{2023}
+{DETTMERS, T. et al. Qlora: efficient finetuning of quantized llms. In:  \emph{Proceedings of the 37th International Conference on Neural Information Processing Systems}. Red Hook, NY, USA: Curran Associates Inc., 2023.  (NIPS '23).}
+
+\bibitem{parisi2022}
+\abntrefinfo{Parisi, Zhao e Fiedel}{PARISI; ZHAO; FIEDEL}{2022}
+{PARISI, A.; ZHAO, Y.; FIEDEL, N. \emph{TALM: Tool Augmented Language Models}. 2022.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2205.12255}.}
+
+\bibitem{xi2025}
+\abntrefinfo{Xi et al.}{XI et al.}{2025}
+{XI, Z. et al. The rise and potential of large language model based agents: a survey.
+\emph{Science China Information Sciences}, v.~68, n.~2, p. 121101, Jan 2025.
+ISSN 1869-1919.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s11432-024-4222-0}.}
+
+\bibitem{wu2024}
+\abntrefinfo{Wu et al.}{WU et al.}{2024}
+{WU, Q. et al. Autogen: Enabling next-gen llm applications via multi-agent conversation. In:  \emph{COLM 2024}. [s.n.], 2024. Dispon{\'\i}vel em: \url{https://www.microsoft.com/en-us/research/publication/autogen-enabling-next-gen-llm-applications-via-multi-agent-conversation-framework/}.}
+
+\bibitem{hong2024}
+\abntrefinfo{Hong et al.}{HONG et al.}{2024}
+{HONG, S. et al. Meta{GPT}: Meta programming for a multi-agent collaborative framework. In:  \emph{The Twelfth International Conference on Learning Representations}. [s.n.], 2024. Dispon{\'\i}vel em: \url{https://openreview.net/forum?id=VtmBAGCN7o}.}
+
+\bibitem{shi2025}
+\abntrefinfo{Shi et al.}{SHI et al.}{2025}
+{SHI, L. et al. A survey on employing large language models for text-to-sql tasks.
+\emph{ACM Comput. Surv.}, Association for Computing Machinery, New York, NY, USA, v.~58, n.~2, set. 2025.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1145/3737873}.}
+
+\bibitem{ascoli2025}
+\abntrefinfo{Ascoli, Kandikonda e Choi}{ASCOLI; KANDIKONDA; CHOI}{2025}
+{ASCOLI, B.; KANDIKONDA, R.; CHOI, J.~D. {ETM:} modern insights into perspective on text-to-sql evaluation in the age of large language models.
+\emph{Future Internet}, v.~17, n.~8, p.~325, 2025.
+Dispon{\'\i}vel em: \url{https://doi.org/10.3390/fi17080325}.}
+
+\bibitem{pourreza2023}
+\abntrefinfo{Pourreza e Rafiei}{POURREZA; RAFIEI}{2023}
+{POURREZA, M.; RAFIEI, D. {DIN}-{SQL}: Decomposed in-context learning of text-to-{SQL} with self-correction. In:  \emph{Thirty-seventh Conference on Neural Information Processing Systems}. [s.n.], 2023. Dispon{\'\i}vel em: \url{https://openreview.net/forum?id=p53QDxSIc5}.}
+
+\bibitem{li2024}
+\abntrefinfo{Li et al.}{LI et al.}{2024}
+{LI, H. et al. Codes: Towards building open-source language models for text-to-sql.
+\emph{Proc. ACM Manag. Data}, Association for Computing Machinery, New York, NY, USA, v.~2, n.~3, 2024.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1145/3654930}.}
+
+\bibitem{zhou2024}
+\abntrefinfo{Zhou et al.}{ZHOU et al.}{2024}
+{ZHOU, F. et al. \emph{{DB}-{GPT}-Hub: Towards Open Benchmarking Text-to-{SQL} Empowered by Large Language Models}. 2024.
+Dispon{\'\i}vel em: \url{https://openreview.net/forum?id=NmILZXKcOi}.}
+
+\bibitem{wang2025macsql}
+\abntrefinfo{Wang et al.}{WANG et al.}{2025}
+{WANG, B. et al. Mac-sql: A multi-agent collaborative framework for text-to-sql. In:  \emph{Proceedings of the 31st International Conference on Computational Linguistics}. [S.l.: s.n.], 2025. p. 540--557.}
+
+\bibitem{abntex2classe}
+\abntrefinfo{abnTeX2 e Araujo}{ABNTEX2; ARAUJO}{2013}
+{ABNTEX2; ARAUJO, L.~C. \emph{A classe abntex2: Modelo can{\^o}nico de trabalhos acad{\^e}micos brasileiros compat{\'\i}vel com as normas ABNT NBR 14724:2011, ABNT NBR 6024:2012 e outras}.
+[S.l.], 2013. Dispon{\'\i}vel em: \url{http://abntex2.googlecode.com/}.}
+
+\bibitem{abntex2-wiki-como-customizar}
+\abntrefinfo{abnTeX2}{ABNTEX2}{2013}
+{ABNTEX2. \emph{Como customizar o abnTeX2}. 2013. Wiki do abnTeX2.
+Dispon{\'\i}vel em: \url{https://code.google.com/p/abntex2/wiki/ComoCustomizar}. Acesso em: 23.3.2013.}
+
+\bibitem{abntex2cite}
+\abntrefinfo{abnTeX2 e Araujo}{ABNTEX2; ARAUJO}{2013a}
+{ABNTEX2; ARAUJO, L.~C. \emph{O pacote abntex2cite: Estilos bibliogr{\'a}ficos compat{\'\i}veis com a ABNT NBR 6023}.
+[S.l.], 2013. Dispon{\'\i}vel em: \url{http://abntex2.googlecode.com/}.}
+
+\bibitem{abntex2cite-alf}
+\abntrefinfo{abnTeX2 e Araujo}{ABNTEX2; ARAUJO}{2013b}
+{ABNTEX2; ARAUJO, L.~C. \emph{O pacote abntex2cite: t{\'o}picos espec{\'\i}ficos da ABNT NBR 10520:2002 e o estilo bibliogr{\'a}fico alfab{\'e}tico (sistema autor-data}.
+[S.l.], 2013. Dispon{\'\i}vel em: \url{http://abntex2.googlecode.com/}.}
+
+\bibitem{memoir}
+\abntrefinfo{Wilson e Madsen}{WILSON; MADSEN}{2010}
+{WILSON, P.; MADSEN, L. \emph{The Memoir Class for Configurable Typesetting - User Guide}.
+Normandy Park, WA, 2010. Dispon{\'\i}vel em: \url{http://mirrors.ctan.org/macros/latex/contrib/memoir/memman.pdf}. Acesso em: 19.12.2012.}
+
+\bibitem{NBR10520:2002}
+\abntrefinfo{ABNT}{ABNT}{2002}
+{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. \emph{{NBR} 10520}: Informa{\c c}\~ao e documenta{\c c}\~ao --- apresenta{\c c}\~ao de cita{\c c}\~oes em documentos.
+Rio de Janeiro, 2002. 7~p.}
+
+\bibitem{NBR14724:2011}
+\abntrefinfo{ABNT}{ABNT}{2011}
+{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. \emph{{NBR} 14724}: Informa{\c c}\~ao e documenta{\c c}\~ao --- trabalhos acad\^emicos --- apresenta{\c c}\~ao.
+Rio de Janeiro, 2011. 15~p.}
+
+\bibitem{van86}
+\abntrefinfo{{van} Gigch e Pipino}{{van} GIGCH; PIPINO}{1986}
+{{van} GIGCH, J.~P.; PIPINO, L.~L. In search for a paradigm for the discipline of information systems.
+\emph{Future Computing Systems}, v.~1, n.~1, p. 71--97, 1986.}
+
+\bibitem{NBR6024:2012}
+\abntrefinfo{ABNT}{ABNT}{2012}
+{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. \emph{{NBR} 6024}: Numera{\c c}\~ao progressiva das se{\c c}\~oes de um documento.
+Rio de Janeiro, 2012. 4~p.}
+
+\bibitem{babel}
+\abntrefinfo{Braams}{BRAAMS}{2008}
+{BRAAMS, J. \emph{Babel, a multilingual package for use with LATEX's standard document classes}.
+[S.l.], 2008. Dispon{\'\i}vel em: \url{http://mirrors.ctan.org/info/babel/babel.pdf}. Acesso em: 17.2.2013.}
+
+\bibitem{amaratunga2023}
+\abntrefinfo{Amaratunga}{AMARATUNGA}{2023}
+{AMARATUNGA, T. (Ed.). \emph{Understanding Large Language Models}. [S.l.]: Apress, 2023.}
+
+\bibitem{jurafsky2025}
+\abntrefinfo{Jurafsky e Martin}{JURAFSKY; MARTIN}{2025}
+{JURAFSKY, D.; MARTIN, J.~H. \emph{Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models}. 3rd. ed. [s.n.], 2025. Dispon{\'\i}vel em: \url{https://web.stanford.edu/~jurafsky/slp3/}.}
+
+\bibitem{goodfellow2016}
+\abntrefinfo{Goodfellow, Bengio e Courville}{GOODFELLOW; BENGIO; COURVILLE}{2016}
+{GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. \emph{Deep Learning}. [S.l.]: MIT Press, 2016. \url{http://www.deeplearningbook.org}.}
+
+\bibitem{devlin2019}
+\abntrefinfo{Devlin et al.}{DEVLIN et al.}{2019}
+{DEVLIN, J. et al. {BERT}: Pre-training of deep bidirectional transformers for language understanding. In:  BURSTEIN, J.; DORAN, C.; SOLORIO, T. (Ed.). \emph{Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)}. Minneapolis, Minnesota: Association for Computational Linguistics, 2019. p. 4171--4186. Dispon{\'\i}vel em: \url{https://aclanthology.org/N19-1423/}.}
+
+\bibitem{kaplan2020}
+\abntrefinfo{Kaplan et al.}{KAPLAN et al.}{2020}
+{KAPLAN, J. et al. \emph{Scaling Laws for Neural Language Models}. 2020.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2001.08361}.}
+
+\bibitem{wei2022emergent}
+\abntrefinfo{Wei et al.}{WEI et al.}{2022}
+{WEI, J. et al. Emergent abilities of large language models.
+\emph{Trans. Mach. Learn. Res.}, v.~2022, 2022.
+Dispon{\'\i}vel em: \url{http://dblp.uni-trier.de/db/journals/tmlr/tmlr2022.html\#WeiTBRZBYBZMCHVLDF22}.}
+
+\bibitem{zhao2025}
+\abntrefinfo{Zhao et al.}{ZHAO et al.}{2025}
+{ZHAO, W.~X. et al. \emph{A Survey of Large Language Models}. 2025.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2303.18223}.}
+
+\bibitem{hoffmann2022}
+\abntrefinfo{Hoffmann et al.}{HOFFMANN et al.}{2022}
+{HOFFMANN, J. et al. Training compute-optimal large language models. In:  \emph{Proceedings of the 36th International Conference on Neural Information Processing Systems}. Red Hook, NY, USA: Curran Associates Inc., 2022.  (NIPS '22).
+ISBN 9781713871088.}
+
+\bibitem{touvron2023}
+\abntrefinfo{Touvron et al.}{TOUVRON et al.}{2023}
+{TOUVRON, H. et al. \emph{LLaMA: Open and Efficient Foundation Language Models}. 2023.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2302.13971}.}
+
+\bibitem{gunasekar2023}
+\abntrefinfo{Gunasekar et al.}{GUNASEKAR et al.}{2023}
+{GUNASEKAR, S. et al. \emph{Textbooks Are All You Need}. 2023.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2306.11644}.}
+
+\bibitem{chung2024}
+\abntrefinfo{Chung et al.}{CHUNG et al.}{2024}
+{CHUNG, H.~W. et al. Scaling instruction-finetuned language models.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~25, n.~1, jan. 2024.
+ISSN 1532-4435.}
+
+\bibitem{wang2025llmsurvey}
+\abntrefinfo{Wang et al.}{WANG et al.}{2025}
+{WANG, F. et al. A comprehensive survey of small language models in the era of large language models: Techniques, enhancements, applications, collaboration with llms, and trustworthiness.
+\emph{ACM Trans. Intell. Syst. Technol.}, Association for Computing Machinery, New York, NY, USA, v.~16, n.~6, nov. 2025.
+ISSN 2157-6904.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1145/3768165}.}
+
+\bibitem{garg2025}
+\abntrefinfo{Garg et al.}{GARG et al.}{2025}
+{GARG, A. et al. \emph{Emissions and Performance Trade-off Between Small and Large Language Models}. 2025.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2601.08844}.}
+
+\bibitem{belcak2025}
+\abntrefinfo{Belcak et al.}{BELCAK et al.}{2025}
+{BELCAK, P. et al. \emph{Small Language Models are the Future of Agentic AI}. 2025.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2506.02153}.}
+
+\bibitem{wei2022finetune}
+\abntrefinfo{Wei et al.}{WEI et al.}{2022}
+{WEI, J. et al. Finetuned language models are zero-shot learners. In:  \emph{The Tenth International Conference on Learning Representations, {ICLR} 2022, Virtual Event, April 25-29, 2022}. OpenReview.net, 2022. Dispon{\'\i}vel em: \url{https://openreview.net/forum?id=gEZrGCozdqR}.}
+
+\bibitem{lou2024}
+\abntrefinfo{Lou, Zhang e Yin}{LOU; ZHANG; YIN}{2024}
+{LOU, R.; ZHANG, K.; YIN, W. Large language model instruction following: A survey of progresses and challenges.
+\emph{Computational Linguistics}, MIT Press, Cambridge, MA, v.~50, n.~3, p. 1053--1095, set. 2024.
+Dispon{\'\i}vel em: \url{https://aclanthology.org/2024.cl-3.7/}.}
+
+\bibitem{russel2020}
+\abntrefinfo{Russell e Norvig}{RUSSELL; NORVIG}{2020}
+{RUSSELL, S.; NORVIG, P. \emph{Artificial Intelligence: {A} Modern Approach (4th Edition)}. Pearson, 2020.
+ISBN 9780134610993. Dispon{\'\i}vel em: \url{http://aima.cs.berkeley.edu/}.}
+
+\bibitem{kong2024}
+\abntrefinfo{Kong et al.}{KONG et al.}{2024}
+{KONG, Y. et al. {TPTU}-v2: Boosting task planning and tool usage of large language model-based agents in real-world industry systems. In:  DERNONCOURT, F.; PREO{\c{T}}IUC-PIETRO, D.; SHIMORINA, A. (Ed.). \emph{Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track}. Miami, Florida, US: Association for Computational Linguistics, 2024. p. 371--385. Dispon{\'\i}vel em: \url{https://aclanthology.org/2024.emnlp-industry.27/}.}
+
+\bibitem{yao2023}
+\abntrefinfo{Yao et al.}{YAO et al.}{2023}
+{YAO, S. et al. React: Synergizing reasoning and acting in language models. In:  \emph{ICLR}. OpenReview.net, 2023. Dispon{\'\i}vel em: \url{http://dblp.uni-trier.de/db/conf/iclr/iclr2023.html\#YaoZYDSN023}.}
+
+\bibitem{wei2022cot}
+\abntrefinfo{Wei et al.}{WEI et al.}{2022}
+{WEI, J. et al. Chain-of-thought prompting elicits reasoning in large language models. In:  \emph{Proceedings of the 36th International Conference on Neural Information Processing Systems}. Red Hook, NY, USA: Curran Associates Inc., 2022.  (NIPS '22).
+ISBN 9781713871088.}
+
+\bibitem{karpas2022}
+\abntrefinfo{Karpas et al.}{KARPAS et al.}{2022}
+{KARPAS, E. et al. {MRKL} systems: {A} modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning.
+\emph{CoRR}, abs/2205.00445, 2022.
+Dispon{\'\i}vel em: \url{https://doi.org/10.48550/arXiv.2205.00445}.}
+
+\bibitem{schick2023}
+\abntrefinfo{Schick et al.}{SCHICK et al.}{2023}
+{SCHICK, T. et al. Toolformer: Language models can teach themselves to use tools.
+\emph{CoRR}, abs/2302.04761, 2023.
+Dispon{\'\i}vel em: \url{https://doi.org/10.48550/arXiv.2302.04761}.}
+
+\bibitem{hulten2018}
+\abntrefinfo{Hulten}{HULTEN}{2018}
+{HULTEN, G. \emph{Building Intelligent Systems: A Guide to Machine Learning Engineering}. 1st. ed. USA: Apress, 2018.
+ISBN 1484234316.}
+
+\bibitem{li2023}
+\abntrefinfo{Li et al.}{LI et al.}{2023}
+{LI, G. et al. Camel: Communicative agents for "mind" exploration of large language model society. In:  OH, A. et al. (Ed.). \emph{Advances in Neural Information Processing Systems}. Curran Associates, Inc., 2023. v.~36, p. 51991--52008. Dispon{\'\i}vel em: \url{https://proceedings.neurips.cc/paper\_files/paper/2023/file/a3621ee907def47c1b952ade25c67698-Paper-Conference.pdf}.}
+
+\bibitem{guo2024}
+\abntrefinfo{Guo et al.}{GUO et al.}{2024}
+{GUO, T. et al. Large language model based multi-agents: A survey of progress and challenges. In:  LARSON, K. (Ed.). \emph{Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence, {IJCAI-24}}. International Joint Conferences on Artificial Intelligence Organization, 2024. p. 8048--8057. Survey Track. Dispon{\'\i}vel em: \url{https://doi.org/10.24963/ijcai.2024/890}.}
+
+\bibitem{hoang2025}
+\abntrefinfo{Hoang et al.}{HOANG et al.}{2025}
+{HOANG, T.~D. et al. \emph{A Multi-agent Text2SQL Framework using Small Language Models and Execution Feedback}. 2025.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2512.18622}.}
+
+\bibitem{quamar2022}
+\abntrefinfo{Quamar et al.}{QUAMAR et al.}{2022}
+{QUAMAR, A. et al. Natural language interfaces to data.
+\emph{Found. Trends Databases}, Now Publishers Inc., Hanover, MA, USA, v.~11, n.~4, p. 319–414, maio 2022.
+ISSN 1931-7883.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1561/1900000078}.}
+
+\bibitem{yu2018}
+\abntrefinfo{Yu et al.}{YU et al.}{2018}
+{YU, T. et al. {S}pider: A large-scale human-labeled dataset for complex and cross-domain semantic parsing and text-to-{SQL} task. In:  RILOFF, E. et al. (Ed.). \emph{Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing}. Brussels, Belgium: Association for Computational Linguistics, 2018. p. 3911--3921. Dispon{\'\i}vel em: \url{https://aclanthology.org/D18-1425/}.}
+
+\bibitem{gao2024}
+\abntrefinfo{Gao et al.}{GAO et al.}{2024}
+{GAO, D. et al. Text-to-sql empowered by large language models: {A} benchmark evaluation.
+\emph{Proc. {VLDB} Endow.}, v.~17, n.~5, p. 1132--1145, 2024.
+Dispon{\'\i}vel em: \url{https://www.vldb.org/pvldb/vol17/p1132-gao.pdf}.}
+
+\end{thebibliography}

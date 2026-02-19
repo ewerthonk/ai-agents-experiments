@@ -1,0 +1,27 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces A delimitação do espaço}}{17}{figure.2.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Gráfico produzido em Excel e salvo como PDF. (Fonte: \citeonline [p. 24]{araujo2012})}}{18}{figure.2.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Grafico 1 da minipage. (Fonte: \citeonline [p. 24]{araujo2012})}}{18}{figure.2.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Grafico 2 da minipage. (Fonte: \citeonline [p. 24]{araujo2012})}}{18}{figure.2.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Espaço semântico e vetorial. Fonte: \cite {raff2025}.}}{27}{figure.3.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Analogia do mecanismo de atenção com um dicionário difuso. Fonte: \cite {raff2025}.}}{28}{figure.3.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Scaled Dot-Product Attention. Fonte: \cite {vaswani2017}.}}{28}{figure.3.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Multi-Head Attention. Fonte: \cite {caseli2024}.}}{29}{figure.3.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Processo de ajuste fino. Fonte: \cite {ouyang2022}.}}{33}{figure.3.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces O Supervised Fine-Tuning (SFT) como extensão do treinamento do modelo base em conjuntos de dados especializados. Fonte: \cite {raff2025}.}}{33}{figure.3.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces RLHF: o aprendizado por reforço ajusta os parâmetros combinando pontuações de qualidade e similaridade para otimizar as saídas. Fonte: \cite {raff2025}.}}{34}{figure.3.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Representação da técnica LoRA. Fonte: \cite {hu2022}.}}{35}{figure.3.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Comparação de métodos: QLoRA aprimora o LoRA via quantização de 4 bits e otimizadores paginados. Fonte: \cite {dettmers2023}.}}{36}{figure.3.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Arquitetura TALM (\textit {Tool-Augmented Language Models}): ciclo de interação entre modelo e ferramentas via interface de texto. Fonte: \cite {parisi2022}.}}{38}{figure.3.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Cenários de Interação para Sistemas Multiagentes com LLMs. Fonte: \cite {xi2025}.}}{39}{figure.3.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura multiagente no sistema OptiGuide: interação entre agentes de coordenação, escrita e salvaguarda. Fonte: \cite {wu2024}.}}{40}{figure.3.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Fluxo de trabalho baseado em SOPs no MetaGPT. Fonte: \cite {hong2024}.}}{41}{figure.3.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Framework de LLMs em Text-to-SQL. (Fonte: \citeonline {shi2025})}}{43}{figure.3.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Exemplo de falso negativo na métrica EM. As consultas buscam o peso máximo de formas distintas, levando a EM a classificar a geração como incorreta. (Fonte: \citeonline {ascoli2025})}}{43}{figure.3.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Exemplo de falso positivo na métrica EX. O filtro extra altera a semântica, mas retorna o mesmo resultado vazio, gerando uma classificação incorreta de acerto. (Fonte: \citeonline {ascoli2025})}}{44}{figure.3.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Arquitetura do DIN-SQL. (Fonte: \citeonline {pourreza2023})}}{44}{figure.3.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Arquitetura do CodeS. (Fonte: \citeonline {li2024})}}{45}{figure.3.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Melhoria de desempenho (EX) obtida com LoRA. O ganho é menor em tarefas de alta complexidade. (Fonte: \citeonline {zhou2024})}}{46}{figure.3.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Visão geral do framework MAC-SQL. (Fonte: \citeonline {wang2025macsql})}}{46}{figure.3.24}%

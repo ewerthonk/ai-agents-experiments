@@ -1,0 +1,50 @@
+# latexindent configuration for essay formatting
+# Configured to wrap text at 80 characters for easier editing
+
+# Default indentation (2 spaces)
+defaultIndent: "  "
+
+# Indentation settings for different elements
+indentRules:
+  document: "  "
+  environments: "  "
+  commands: "  "
+  ifElseFi: "  "
+  items: "  "
+  
+# Preserve alignment in tables and equations
+lookForAlignDelims:
+  tabular: 1
+  array: 1
+  align: 1
+  align*: 1
+  alignat: 1
+  alignat*: 1
+  equation: 1
+  
+# Control line breaks for environments
+modifyLineBreaks:
+  environments:
+    BeginStartsOnOwnLine: 1
+    BodyStartsOnOwnLine: 1
+    EndStartsOnOwnLine: 1
+    EndFinishesWithLineBreak: 1
+  textWrapOptions:
+    columns: 80
+    multipleSpacesToSingle: 1
+    removeBlockLineBreaks: 1
+    
+# Don't modify verbatim environments
+specialBeginEnd:
+  verbatim:
+    begin: 0
+    end: 0
+    body: 0
+  lstlisting:
+    begin: 0
+    end: 0
+    body: 0
+  minted:
+    begin: 0
+    end: 0
+    body: 0
