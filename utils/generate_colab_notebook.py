@@ -85,7 +85,6 @@ drive.mount('/content/drive')
 from google.colab import userdata
 
 # Pull the secrets from Colab's native Secret Manager (the little key icon)
-os.environ["OPENAI_API_KEY"] = userdata.get('OPENAI_API_KEY')
 os.environ["LANGWATCH_API_KEY"] = userdata.get('LANGWATCH_API_KEY')""")
 
     add_markdown("## 4. Setup LLaMA Server\nCompiles llama.cpp for CUDA support.")
