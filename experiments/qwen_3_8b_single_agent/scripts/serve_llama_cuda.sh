@@ -36,7 +36,7 @@ export LLAMA_CACHE="$MODELS_DIR"
     -c 32768 \
     -b 512 \
     -n 8096 \
-    -np 4 \
+    -np 8 \
     -ngl 99 \
     --cache-type-k q8_0 \
     --cache-type-v q8_0 \

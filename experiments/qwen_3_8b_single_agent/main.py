@@ -24,6 +24,11 @@ def read_data(dataset: str):
     df = pd.read_parquet(path=dataset_path)
     return df
 
+def get_prediction_txt_path(dataset: str, prediction_txt_filename: str) -> Path:
+    """Resolves the exact output path for predictions based on the dataset name."""
+    dataset_dir = getattr(settings, f"{dataset}_dir")
+    return dataset_dir.joinpath(f"{prediction_txt_filename}.txt")
+
 async def run_graph_in_batch(
     dataset: str = "spider_dev",
     prediction_txt_filename: str = "qwen_3_8b_single_agent",
@@ -31,8 +36,7 @@ async def run_graph_in_batch(
     tag: str = None
 ):
     df = read_data(dataset)
-    dataset_dir = getattr(settings, f"{dataset}_dir")
-    prediction_txt_path = dataset_dir.joinpath(f"{prediction_txt_filename}.txt")
+    prediction_txt_path = get_prediction_txt_path(dataset, prediction_txt_filename)
     inputs = df.assign(dataset=dataset)[["db_id", "question", "dataset"]].to_dict(orient="records")
     
     logger.info(f"Running {prediction_txt_filename} on {len(df)} records with a concurrency of {max_concurrency}")

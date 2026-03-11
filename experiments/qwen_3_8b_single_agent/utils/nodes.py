@@ -4,6 +4,7 @@ import pandas as pd
 from textwrap import dedent
 import langwatch
 from langchain_openai import ChatOpenAI
+from langchain_core.runnables import RunnableConfig
 
 # Project Imports
 from settings.settings import settings

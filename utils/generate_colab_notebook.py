@@ -67,11 +67,13 @@ drive.mount('/content/drive')
 !git clone {github_url} {repo_name}
 %cd {repo_name}
 
-# Copy the dataset from Google Drive into the repo and extract it
-# It looks for a zip file matching your DATASET variable name
-!cp /content/drive/MyDrive/{{DATASET}}.zip .
+# Copy the dataset from Google Drive and strictly extract it into the spider data path
+!mkdir -p data/spider
+!cp /content/drive/MyDrive/{{DATASET}}.zip data/spider/
+%cd data/spider/
 !unzip -q {{DATASET}}.zip
-!rm {{DATASET}}.zip""")
+!rm {{DATASET}}.zip
+%cd /content/{repo_name}""")
 
     add_markdown("## 2. Install Dependencies using uv\nWe install `uv` explicitly to resolve `pyproject.toml` extremely fast.")
     add_code("""# Install uv
@@ -136,24 +138,40 @@ while True:
     add_code("""# Ensure sampling string is formatted correctly for bash parsing
 SAMPLE_FLAG = "--sample" if IS_SAMPLE else ""
 
-# Run the main pipeline using the dynamic variables
-!python -m experiments.{EXPERIMENT_NAME}.main \\
-    --dataset {DATASET} \\
-    --prediction_txt_filename {PREDICTION_TXT_FILENAME} \\
+# Run the main pipeline (using -u to force unbuffered logs to the console)
+!python -u -m experiments.{EXPERIMENT_NAME}.main \\
+    --dataset "{DATASET}" \\
+    --prediction_txt_filename "{PREDICTION_TXT_FILENAME}" \\
     --max_concurrency {MAX_CONCURRENCY} \\
-    --tag {EXPERIMENT_TAG} \\
+    --tag "{EXPERIMENT_TAG}" \\
     {SAMPLE_FLAG}""")
 
     add_markdown("## 7. Save & Download Results")
-    add_code(f"""from google.colab import files
+    add_code("""import sys
+import importlib
+from pathlib import Path
+from google.colab import files
 
-output_file = f"data/spider/predictions/{{PREDICTION_TXT_FILENAME}}.txt"
+# Import your own main.py logic dynamically based on whatever EXPERIMENT_NAME is set to in Cell 0!
+main_module = importlib.import_module(f"experiments.{EXPERIMENT_NAME}.main")
+get_prediction_txt_path = main_module.get_prediction_txt_path
 
-# Copy safely to drive
-!cp {{output_file}} /content/drive/MyDrive/
+# Determine if main.py used the _sample dataset suffix
+actual_dataset = f"{DATASET}_sample" if IS_SAMPLE else DATASET
 
-# Trigger browser download
-files.download(output_file)""")
+# Replicate main.py's path resolution exactly
+output_file = get_prediction_txt_path(actual_dataset, PREDICTION_TXT_FILENAME)
+
+if output_file.exists():
+    print(f"Found prediction file at: {{output_file}}")
+    
+    # Copy safely to drive
+    !cp {{output_file}} /content/drive/MyDrive/
+    
+    # Trigger browser download
+    files.download(str(output_file))
+else:
+    print(f"Error: Prediction file not found at {{output_file}}! Check the logs above.")""")
 
     # --- Assemble Notebook ---
     notebook = {
