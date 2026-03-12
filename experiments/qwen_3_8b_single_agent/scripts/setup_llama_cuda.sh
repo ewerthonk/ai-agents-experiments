@@ -8,6 +8,11 @@ echo "=========================================="
 echo " llama.cpp with CUDA"
 echo "=========================================="
 
+# Install system dependencies
+echo "=> Installing system dependencies..."
+apt-get update
+apt-get install pciutils build-essential cmake curl libcurl4-openssl-dev -y
+
 if [ ! -d "$LLAMA_CPP_PATH" ]; then
     echo "=> Cloning llama.cpp..."
     git clone https://github.com/ggml-org/llama.cpp.git "$LLAMA_CPP_PATH"
@@ -17,10 +22,23 @@ fi
 
 echo "=> Building llama.cpp with CUDA support..."
 cd "$LLAMA_CPP_PATH"
-cmake -B build -DGGML_CUDA=ON
-# Only building llama-server and llama-cli exactly as requested to reduce overhead
-CMAKE_CORES=$(nproc 2>/dev/null || sysctl -n hw.logicalcpu || echo "2")
-cmake --build build --config Release -j $CMAKE_CORES --target llama-server --target llama-cli
+
+# Build configuration matching user request
+cmake -B build -DBUILD_SHARED_LIBS=OFF -DGGML_CUDA=ON
+
+# Build specific targets
+echo "=> Building targets: llama-cli, llama-server,"
+cmake --build build --config Release -j --clean-first \
+    --target llama-cli \
+    --target llama-server
+
+# Copy binaries to root for easier access
+echo "=> Copying binaries to $LLAMA_CPP_PATH root..."
+cp build/bin/llama-* .
+
 cd ..
 
-echo "=> Setup complete! The compiled binaries are ready at $LLAMA_CPP_PATH/build/bin/"
+echo "=========================================="
+echo "=> Setup complete!"
+echo "=> Binaries available in $LLAMA_CPP_PATH/"
+echo "=========================================="

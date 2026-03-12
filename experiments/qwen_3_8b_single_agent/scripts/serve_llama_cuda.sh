@@ -2,7 +2,7 @@
 set -e
 
 # simplified colab serve script - expects llama.cpp and models folder in current directory
-LLAMA_SERVER_PATH="./llama.cpp/build/bin/llama-server"
+LLAMA_SERVER_PATH="./llama.cpp/llama-server"
 MODELS_DIR="./models"
 
 MODEL_REPO="unsloth/Qwen3-8B-GGUF"
@@ -33,6 +33,11 @@ export LLAMA_CACHE="$MODELS_DIR"
     --host 0.0.0.0 \
     --port 8000 \
     --temp 0.6 \
+    --temperature 0.6 \
+    --top-p 0.8 \
+    --min-p 0.0 \
+    --top-k 20 \
+    -seed 42 \
     -c 32768 \
     -b 512 \
     -n 8096 \
@@ -41,4 +46,5 @@ export LLAMA_CACHE="$MODELS_DIR"
     --cache-type-k q8_0 \
     --cache-type-v q8_0 \
     -fa on \
+    --jinja \
     --chat-template-kwargs '{"enable_thinking":true}'

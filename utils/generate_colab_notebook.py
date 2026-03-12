@@ -87,7 +87,12 @@ drive.mount('/content/drive')
 from google.colab import userdata
 
 # Pull the secrets from Colab's native Secret Manager (the little key icon)
-os.environ["LANGWATCH_API_KEY"] = userdata.get('LANGWATCH_API_KEY')""")
+os.environ["LANGWATCH_API_KEY"] = userdata.get('LANGWATCH_API_KEY')
+os.environ["LANGSMITH_TRACING"] = userdata.get('LANGSMITH_TRACING')
+os.environ["LANGSMITH_ENDPOINT"] = userdata.get('LANGSMITH_ENDPOINT')
+os.environ["LANGSMITH_API_KEY"] = userdata.get('LANGSMITH_API_KEY')
+os.environ["LANGSMITH_PROJECT"] = userdata.get('LANGSMITH_PROJECT')
+""")
 
     add_markdown("## 4. Setup LLaMA Server\nCompiles llama.cpp for CUDA support.")
     add_code("""# Ensure scripts are executable

@@ -88,7 +88,6 @@ async def query_node(state: State) -> dict:
         base_url="http://127.0.0.1:8000/v1",
         api_key="sk-no-key-required",
         model="qwen3_8b_q4",
-        extra_body={"enable_thinking": True},
         seed=42,
     ).bind_tools([sql_query], tool_choice="sql_query")
     
