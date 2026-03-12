@@ -2,11 +2,10 @@
 import sqlite3
 import pandas as pd
 from textwrap import dedent
-from langchain_ollama import ChatOllama
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 import langwatch
 from langchain_core.runnables import RunnableConfig
-from langfuse import get_client
-from langfuse.langchain import CallbackHandler
+
 
 # Project Imports
 from settings.settings import settings
@@ -14,9 +13,6 @@ from .state import State
 from .prompts import query_generation_prompt
 from .tools import sql_query
 
-langwatch.setup()
-langfuse = get_client()
-langfuse_handler = CallbackHandler()
 
 def context_node(state: State) -> dict:
     db_id = state.get("db_id")
@@ -70,8 +66,8 @@ def context_node(state: State) -> dict:
     except Exception as e:
         return {"context": f"Error extracting schema for {db_id}: {str(e)}"}
 
-
-async def query_node(state: State) -> dict:
+@langwatch.span(name="query_node")
+def query_node(state: State) -> dict:
     context = state.get("context")
     if context:
         context_block = dedent(
@@ -88,17 +84,20 @@ async def query_node(state: State) -> dict:
         context_block=context_block
     )
     
-    model = ChatOllama(
-        model="hf.co/unsloth/Qwen3-8B-GGUF:UD-Q4_K_XL",
-        validate_model_on_init=True,
-        temperature=0.6,
-        top_p=0.95,
-        top_k=20,
-        min_p=0.0,
-        seed=42,
+    model = ChatHuggingFace(
+        llm=HuggingFaceEndpoint(
+            repo_id="Qwen/Qwen3.5-9B",
+            task="text-generation",
+            provider="together",
+            temperature=0.6,
+            top_p=0.95,
+            top_k=20,
+            seed=42,
+            huggingfacehub_api_token=settings.huggingfacehub_api_token,
+        )
     ).bind_tools([sql_query], tool_choice="sql_query")
     
-    response = await model.ainvoke(formatted_prompt, config=RunnableConfig(callbacks=[langwatch.get_current_trace().get_langchain_callback(), langfuse_handler]))
+    response = model.invoke(formatted_prompt, config=RunnableConfig(callbacks=[langwatch.get_current_trace().get_langchain_callback()]))
     
     if response.tool_calls:
         query = response.tool_calls[0]["args"].get("query", "")

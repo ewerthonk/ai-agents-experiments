@@ -1,0 +1,100 @@
+SELECT District FROM shop WHERE Number_products < 3000 INTERSECT SELECT District FROM shop WHERE Number_products > 10000;
+SELECT first_name, country_code FROM players WHERE birth_date = (SELECT MIN(birth_date) FROM players);
+SELECT TV_Channel.series_name, TV_Channel.Country FROM Cartoon JOIN TV_Channel ON Cartoon.Channel = TV_Channel.id WHERE Cartoon.Directed_by IN ('Ben Jones', 'Michael Chang')
+SELECT Cylinders, MAX(Accelerate) as MaxAccelerate FROM cars_data GROUP BY Cylinders
+SELECT dp.degree_program_id, dp.degree_summary_name FROM Degree_Programs dp JOIN Student_Enrolment se ON dp.degree_program_id = se.degree_program_id GROUP BY dp.degree_program_id ORDER BY COUNT(DISTINCT se.student_id) DESC LIMIT 1;
+SELECT Paragraphs.Paragraph_Text FROM Paragraphs JOIN Documents ON Paragraphs.Document_ID = Documents.Document_ID WHERE Documents.Document_Name = 'Customer reviews';
+SELECT zip_postcode FROM Addresses WHERE city = 'Port Chelsea';
+SELECT DISTINCT s.first_name FROM Students s JOIN Addresses a ON s.permanent_address_id = a.address_id WHERE a.country = 'Haiti' OR s.cell_mobile_number = '09700166582';
+SELECT a.Abbreviation, a.Country FROM airlines a JOIN (SELECT Airline, COUNT(*) as flight_count FROM flights GROUP BY Airline) f ON a.uid = f.Airline ORDER BY flight_count ASC LIMIT 1;
+SELECT COUNT(*) FROM flights JOIN airports ON flights.DestAirport = airports.AirportCode WHERE airports.City = 'Aberdeen';
+SELECT SUM(Population) AS total_population, AVG(SurfaceArea) AS average_surface_area FROM country WHERE Continent = 'North America' AND SurfaceArea > 3000;
+SELECT city.Name, city.Population FROM city JOIN countrylanguage ON city.CountryCode = countrylanguage.CountryCode WHERE countrylanguage.Language = 'English' AND countrylanguage.IsOfficial = 'T' ORDER BY city.Population DESC LIMIT 1;
+SELECT liked_id, COUNT(*) as like_count FROM Likes GROUP BY liked_id;
+SELECT Template_ID, Version_Number, Template_Type_Code FROM Templates;
+SELECT s.first_name, s.middle_name, s.last_name, s.student_id FROM Students s WHERE s.student_id IN (SELECT se.student_id FROM Student_Enrolment se GROUP BY se.student_id, se.semester_id HAVING COUNT(se.degree_program_id) = 2);
+SELECT Name FROM stadium WHERE Stadium_ID NOT IN (SELECT CAST(Stadium_ID AS INTEGER) FROM concert WHERE Year = '2014')
+SELECT a.Airline FROM airlines a WHERE EXISTS (SELECT 1 FROM flights f WHERE f.Airline = a.uid AND f.SourceAirport = 'APG') AND EXISTS (SELECT 1 FROM flights f WHERE f.Airline = a.uid AND f.SourceAirport = 'CVO')
+SELECT COUNT(*) FROM car_makers WHERE Country = (SELECT CountryId FROM countries WHERE CountryName = 'France')
+SELECT Country FROM TV_Channel WHERE id NOT IN (SELECT DISTINCT Channel FROM Cartoon WHERE Written_by = 'Todd Casey')
+SELECT Name FROM conductor WHERE Nationality != 'USA';
+SELECT Population, LifeExpectancy FROM country WHERE Name = 'Brazil'
+SELECT city.Name, city.District, city.Population FROM city JOIN country ON city.CountryCode = country.Code WHERE country.Continent = 'Europe' AND NOT EXISTS (     SELECT 1     FROM countrylanguage     WHERE countrylanguage.CountryCode = country.Code     AND countrylanguage.Language = 'English'     AND countrylanguage.IsOfficial = 'T' );
+SELECT MIN(Share) AS min_share, MAX(Share) AS max_share FROM TV_series;
+SELECT v.Name, v.Age FROM visitor v JOIN visit vis ON v.ID = CAST(vis.visitor_ID AS INT) WHERE vis.Num_of_Ticket = (SELECT MAX(Num_of_Ticket) FROM visit);
+SELECT Weekly_Rank FROM TV_series WHERE Episode = 'A Love of a Lifetime';
+SELECT format, COUNT(*) as frequency FROM (SELECT UNNEST(SPLIT(Major_Record_Format, ' / ')) as format FROM orchestra) GROUP BY format ORDER BY frequency DESC;
+SELECT Title FROM Cartoon WHERE Directed_by = 'Ben Jones' OR Directed_by = 'Brandon Vietti';
+SELECT AVG(LifeExpectancy) FROM country WHERE Code NOT IN (SELECT CountryCode FROM countrylanguage WHERE Language = 'English' AND IsOfficial = 'T')
+SELECT Money_Rank FROM poker_player WHERE Earnings = (SELECT MAX(Earnings) FROM poker_player);
+SELECT Template_ID, COUNT(*) as count FROM Documents WHERE Template_ID IS NOT NULL GROUP BY Template_ID;
+SELECT airlines.Airline FROM airlines LEFT JOIN flights ON airlines.uid = flights.Airline GROUP BY airlines.uid, airlines.Airline HAVING COUNT(flights.Airline) < 200;
+SELECT COUNT(*) FROM flights WHERE SourceAirport IN (SELECT AirportCode FROM airports WHERE City = 'Aberdeen')
+SELECT Version_Number, Template_Type_Code FROM Templates WHERE Version_Number > 5;
+SELECT COUNT(*) AS arrival_count FROM flights JOIN airports ON flights.DestAirport = airports.AirportCode WHERE airports.City = 'Aberdeen';
+SELECT h.name FROM Highschooler h JOIN (SELECT student_id FROM Friend GROUP BY student_id HAVING COUNT(friend_id) >= 3) f ON h.ID = f.student_id;
+SELECT COUNT(*) FROM employee;
+SELECT section_name FROM Sections ORDER BY section_name DESC;
+SELECT Citizenship FROM singer WHERE Birth_Year < 1945 AND Birth_Year > 1955;
+SELECT COUNT(DISTINCT Location) FROM shop;
+SELECT c.Cylinders FROM car_names cn JOIN cars_data c ON cn.MakeId = c.Id WHERE cn.Make = 'volvo' ORDER BY c.Accelerate ASC LIMIT 1;
+SELECT c.Name, COUNT(o.Orchestra_ID) as num_orchestras FROM conductor c JOIN orchestra o ON c.Conductor_ID = o.Conductor_ID GROUP BY c.Conductor_ID, c.Name ORDER BY num_orchestras DESC LIMIT 1;
+SELECT 1
+SELECT 1
+SELECT DISTINCT S.Fname, S.Age FROM Student S JOIN Has_Pet HP ON S.StuID = HP.StuID;
+SELECT Country, COUNT(Singer_ID) as count FROM singer GROUP BY Country;
+SELECT Treatments.date_of_treatment, Professionals.first_name FROM Treatments INNER JOIN Professionals ON Treatments.professional_id = Professionals.professional_id;
+SELECT COUNT(DISTINCT state) FROM AREA_CODE_STATE;
+SELECT t.Template_Type_Code FROM Documents d JOIN Templates t ON d.Template_ID = t.Template_ID GROUP BY t.Template_Type_Code ORDER BY COUNT(*) DESC LIMIT 1;
+SELECT s.Fname FROM Student s WHERE s.StuID IN (SELECT hp.StuID FROM Has_Pet hp JOIN Pets p ON hp.PetID = p.PetID WHERE p.PetType = 'cat') AND s.StuID IN (SELECT hp.StuID FROM Has_Pet hp JOIN Pets p ON hp.PetID = p.PetID WHERE p.PetType = 'dog')
+SELECT car_names.MakeId, car_names.Make FROM car_names JOIN cars_data ON car_names.Id = cars_data.Id WHERE cars_data.Cylinders < 4 AND CAST(cars_data.Horsepower AS INTEGER) > (SELECT MIN(CAST(Horsepower AS INTEGER)) FROM cars_data);
+SELECT first_name, last_name FROM players WHERE hand = 'L' ORDER BY birth_date;
+SELECT countries.CountryName FROM countries LEFT JOIN car_makers ON countries.CountryId = car_makers.Country WHERE car_makers.Country IS NULL;
+SELECT people.Name FROM people INNER JOIN poker_player ON people.People_ID = poker_player.People_ID
+SELECT email_address, cell_number, home_phone FROM Professionals;
+SELECT FlightNo FROM flights WHERE SourceAirport = 'APG'
+SELECT COUNT(*) FROM Cartoon WHERE Written_by = 'Joseph Kuhr';
+SELECT TV_series.Episode FROM TV_series JOIN TV_Channel ON TV_series.Channel = TV_Channel.id WHERE TV_Channel.series_name = 'Sky Radio';
+SELECT DISTINCT CountryCode FROM countrylanguage WHERE Language != 'English';
+SELECT COUNT(DISTINCT Language) FROM countrylanguage;
+SELECT Production_code, Channel FROM Cartoon ORDER BY Original_air_date DESC LIMIT 1;
+SELECT Treatments.date_of_treatment, Professionals.first_name FROM Treatments JOIN Professionals ON Treatments.professional_id = Professionals.professional_id;
+SELECT 1
+SELECT COUNT(*) FROM "TV_Channel" WHERE "Language" = 'English';
+SELECT Name FROM teacher WHERE Age IN ('32', '33');
+SELECT PetID, weight FROM Pets WHERE pet_age > 1;
+SELECT Country, COUNT(*) as count FROM TV_Channel GROUP BY Country ORDER BY count DESC LIMIT 1;
+SELECT countries.CountryName, COUNT(car_makers.Id) as maker_count FROM car_makers JOIN countries ON car_makers.Country = countries.CountryId GROUP BY countries.CountryId ORDER BY maker_count DESC LIMIT 1;
+SELECT COUNT(*) FROM museum WHERE Open_Year > '2013' OR Open_Year < '2008'
+SELECT s.student_id, s.first_name, s.middle_name, s.last_name, COUNT(*) AS num_enrollments FROM Students s JOIN Student_Enrolment se ON s.student_id = se.student_id GROUP BY s.student_id ORDER BY num_enrollments DESC LIMIT 1;
+SELECT 1
+SELECT COUNT(*) FROM orchestra WHERE Major_Record_Format IN ('CD', 'DVD');
+SELECT car_makers.FullName, COUNT(model_list.ModelId) AS count FROM car_makers JOIN model_list ON car_makers.Id = model_list.Maker GROUP BY car_makers.Id, car_makers.FullName;
+SELECT AVG(Age) FROM Student WHERE NOT EXISTS (SELECT 1 FROM Has_Pet WHERE Has_Pet.StuID = Student.StuID);
+SELECT Template_ID FROM Documents GROUP BY Template_ID HAVING COUNT(*) > 1;
+SELECT car_names.Make, cars_data.Year FROM cars_data JOIN car_names ON cars_data.Id = car_names.MakeId WHERE cars_data.Year = (SELECT MIN(Year) FROM cars_data);
+SELECT h.name, COUNT(*) as like_count FROM Highschooler h JOIN Likes l ON h.ID = l.student_id GROUP BY h.ID ORDER BY like_count DESC LIMIT 1;
+SELECT 1
+SELECT AVG(CAST(Horsepower AS INTEGER)) FROM cars_data WHERE Year < 1980;
+SELECT Country FROM singer GROUP BY Country HAVING COUNT(CASE WHEN Age > 40 THEN 1 END) > 0 AND COUNT(CASE WHEN Age < 30 THEN 1 END) > 0;
+SELECT h.name FROM Highschooler h JOIN (SELECT student_id, COUNT(*) AS friend_count FROM Friend GROUP BY student_id HAVING COUNT(*) >= 2) f ON h.ID = f.student_id WHERE h.grade > 5;
+SELECT COUNT(*) FROM Transcripts;
+SELECT COUNT(*) AS dog_count FROM Student s JOIN Has_Pet hp ON s.StuID = hp.StuID JOIN Pets p ON hp.PetID = p.PetID WHERE s.Sex = 'F' AND p.PetType = 'dog';
+SELECT s.Name, COUNT(*) AS concert_count FROM stadium s JOIN concert c ON CAST(c.Stadium_ID AS INTEGER) = s.Stadium_ID GROUP BY s.Name;
+SELECT COUNT(DISTINCT Nationality) FROM conductor;
+SELECT Air_Date FROM TV_series WHERE Episode = 'A Love of a Lifetime';
+SELECT year, COUNT(*) as num_matches FROM matches GROUP BY year ORDER BY year;
+SELECT Name, Country, Age FROM singer ORDER BY Age DESC;
+SELECT COUNT(*) FROM continents;
+SELECT COUNT(*) AS total_players FROM players;
+SELECT Airline, Abbreviation FROM airlines WHERE Country = 'USA';
+SELECT 1
+SELECT COUNT(*) FROM flights WHERE Airline = (SELECT uid FROM airlines WHERE Airline = 'JetBlue Airways')
+SELECT Name FROM country WHERE Continent = 'Africa' AND Population < (SELECT MIN(Population) FROM country WHERE Continent = 'Asia')
+SELECT Document_ID FROM Paragraphs GROUP BY Document_ID HAVING COUNT(*) >= 2
+SELECT car_names.Model FROM cars_data JOIN car_names ON cars_data.Id = car_names.MakeId ORDER BY CAST(cars_data.Horsepower AS INTEGER) ASC LIMIT 1;
+SELECT s.last_name FROM Students s JOIN Addresses a ON s.current_address_id = a.address_id WHERE a.state_province_county = 'North Carolina' AND NOT EXISTS (SELECT 1 FROM Student_Enrolment se WHERE se.student_id = s.student_id);
+SELECT Name FROM singer ORDER BY Net_Worth_Millions DESC LIMIT 1;
+SELECT 1
+SELECT StuID FROM Student WHERE StuID NOT IN (SELECT hp.StuID FROM Has_Pet hp JOIN Pets p ON hp.PetID = p.PetID WHERE p.PetType = 'cat')
+SELECT 1

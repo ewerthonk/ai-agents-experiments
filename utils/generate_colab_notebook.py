@@ -32,30 +32,29 @@ def generate_colab_notebook(experiment_name: str, default_dataset: str = "spider
 
     # --- Setup Notebook Cells ---
     
-    add_markdown(f"# Colab Runner: {experiment_name}\nAutomatically generated experiment runner. Configure your run parameters below.")
+    add_markdown(f"# Colab Runner: {experiment_name}")
     
-    add_markdown("## 0. Configuration Parameters\nSet your experiment details here before running the rest of the notebook.")
-    add_code(f"""# ----------------------------------------
-# EDIT THESE VARIABLES FOR YOUR RUN
-# ----------------------------------------
-
-# The exact name of the dataset zip file mapped in your Google Drive (e.g. 'spider_dev', 'spider_train')
+    add_markdown("## 0. Configuration Parameters")
+    add_code(f"""# The exact name of the dataset zip file mapped in your Google Drive (e.g. 'spider_dev', 'spider_train')
 DATASET = "{default_dataset}"
 
 # The name of the experiment (MUST match the exact folder name inside 'experiments/')
 EXPERIMENT_NAME = "{experiment_name}"
 
+# Model to be pulled from Hugging Face
+MODEL_NAME = "unsloth/Qwen3-8B-GGUF:UD-Q4_K_XL"
+
 # The name of the final prediction text file that will be saved and downloaded
 PREDICTION_TXT_FILENAME = "{experiment_name}_colab_run"
 
 # Execute a small sample instead of the full dataset (Requires --sample flag in main.py)
-IS_SAMPLE = False
+IS_SAMPLE = True
 
 # Concurrency allowed for batch LLM requests
 MAX_CONCURRENCY = {default_concurrency}
 
-# Optional tagging for LangSmith / tracing purposes
-EXPERIMENT_TAG = "{experiment_name}_v1"
+# Optional tagging tracing purposes
+EXPERIMENT_TAG = "{experiment_name}"
 """)
     
     add_markdown("## 1. Setup Environment & Clone Repository")
@@ -92,54 +91,33 @@ os.environ["LANGSMITH_TRACING"] = userdata.get('LANGSMITH_TRACING')
 os.environ["LANGSMITH_ENDPOINT"] = userdata.get('LANGSMITH_ENDPOINT')
 os.environ["LANGSMITH_API_KEY"] = userdata.get('LANGSMITH_API_KEY')
 os.environ["LANGSMITH_PROJECT"] = userdata.get('LANGSMITH_PROJECT')
+os.environ["LANGFUSE_SECRET_KEY"] = userdata.get('LANGFUSE_SECRET_KEY')
+os.environ["LANGFUSE_PUBLIC_KEY"] = userdata.get('LANGFUSE_PUBLIC_KEY')
+os.environ["LANGFUSE_BASE_URL"] = userdata.get('LANGFUSE_BASE_URL')
+
 """)
 
-    add_markdown("## 4. Setup LLaMA Server\nCompiles llama.cpp for CUDA support.")
-    add_code("""# Ensure scripts are executable
-!chmod +x experiments/{EXPERIMENT_NAME}/scripts/setup_llama_cuda.sh
-!chmod +x experiments/{EXPERIMENT_NAME}/scripts/serve_llama_cuda.sh
+    add_markdown("## 4. Setup ollama")
+    add_code("""!sudo apt update
+!sudo apt install -y pciutils zstd
+!curl -fsSL https://ollama.com/install.sh | sh""")
 
-# Run setup
-!./experiments/{EXPERIMENT_NAME}/scripts/setup_llama_cuda.sh""")
-
-    add_markdown("## 5. Launch LLaMA Server (Background Subprocess)\nSpawns the server globally so the notebook can continue executing.")
-    add_code("""import subprocess
+    add_markdown("## 5. Serve ollama")
+    add_code("""import threading
+import subprocess
 import time
 
-print("Starting server globally in the background...")
+def run_ollama_serve():
+  subprocess.Popen(["ollama", "serve"])
 
-# Launch globally so the next cell can read from 'process'
-process = subprocess.Popen(
-    [f"./experiments/{EXPERIMENT_NAME}/scripts/serve_llama_cuda.sh"], 
-    stdout=subprocess.PIPE, 
-    stderr=subprocess.STDOUT, 
-    text=True
-)
+thread = threading.Thread(target=run_ollama_serve)
+thread.start()
+time.sleep(5)""")
 
-time.sleep(2)
-print("Process spawned! Run the next cell to watch it load.")""")
+    add_markdown("Pulling ollama model")
+    add_code(f"""!ollama pull hf.co/{MODEL_NAME}""")
 
-    add_markdown("Wait for the server to load by streaming the logs. This block will **automatically stop** when the server is ready.")
-    add_code("""import time
-
-print("Waiting for server to load the model into VRAM...")
-print("-" * 50)
-
-while True:
-    line = process.stdout.readline()
-    if not line:
-        time.sleep(0.1)
-        continue
-    
-    print(line, end="")
-    
-    # Automatically stop the cell log stream once the server finishes booting!
-    if "update_slots: all slots are idle" in line:
-        print("\\n" + "-" * 50)
-        print("✅ SUCCESS! Server is fully loaded and ready for LangChain!")
-        break""")
-
-    add_markdown("## 6. Run the Experiment\nExecutes the LangGraph batch run using the parameters defined in Cell 0.")
+    add_markdown("## 6. Run the Experiment")
     add_code("""# Ensure sampling string is formatted correctly for bash parsing
 SAMPLE_FLAG = "--sample" if IS_SAMPLE else ""
 

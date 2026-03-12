@@ -25,8 +25,14 @@ class Settings(BaseSettings):
     spider_test_db_dir: Path = spider_data_dir.joinpath("database")
     spider_test_dir: Path = spider_data_dir.joinpath("test")
 
-    # API Keys
+    # Observability
     langwatch_api_key: str | None = None
+    langfuse_public_key: str | None = None
+    langfuse_secret_key: str | None = None
+    langfuse_base_url: str | None = None
+
+    # Model Providers
+    huggingfacehub_api_token: str | None = None
 
     # Model Config
     model_config = SettingsConfigDict(
