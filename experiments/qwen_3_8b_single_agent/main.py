@@ -4,6 +4,7 @@ import argparse
 import asyncio
 import pandas as pd
 import sys
+from pathlib import Path
 
 # Project Imports
 from settings.settings import settings

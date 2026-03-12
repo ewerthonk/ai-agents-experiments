@@ -37,7 +37,7 @@ export LLAMA_CACHE="$MODELS_DIR"
     --top-p 0.8 \
     --min-p 0.0 \
     --top-k 20 \
-    -seed 42 \
+    --seed 42 \
     -c 32768 \
     -b 512 \
     -n 8096 \
